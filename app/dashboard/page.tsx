@@ -1,5 +1,6 @@
 import React from 'react'
 import FeaturedBanner from './_components/FeaturedBanner'
+import AnimeCard from './_components/AnimeCards'
 
 const staticDataBanner = {
     imageSource: "anime-covers/frieren.jpg", 
@@ -16,6 +17,11 @@ function DashboardPage() {
   return (
     <div>
       <FeaturedBanner {...staticDataBanner} />
+      <p className="text-3xl font-bold mt-8 border-l-royal-purple border-l-8 pl-2">Anime</p>
+      <p className="mt-2">Browse your favorite anime</p>
+      <div className='mt-8 flex gap-3'>
+        { Array.from({ length:8 }).map((e) => <AnimeCard />) }
+      </div>
     </div>
   )
 }
