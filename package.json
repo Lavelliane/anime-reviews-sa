@@ -13,11 +13,14 @@
     "@nextui-org/react": "^2.4.6",
     "@nextui-org/system": "^2.2.5",
     "@nextui-org/theme": "^2.2.9",
+    "axios": "^1.7.3",
     "framer-motion": "^11.3.24",
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
-    "zod": "^3.23.8"
+    "zod": "^3.23.8",
+    "zsa": "^0.5.1",
+    "zsa-react": "^0.2.2"
   },
   "devDependencies": {
     "@types/node": "^20",

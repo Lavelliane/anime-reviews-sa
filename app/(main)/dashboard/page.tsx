@@ -1,6 +1,9 @@
 import React from 'react'
 import FeaturedBanner from './_components/FeaturedBanner'
 import AnimeCard from './_components/AnimeCards'
+import baseApi from '@/helpers/baseApi'
+import axios from 'axios'
+import { Anime } from '@/types/anime'
 
 const staticDataBanner = {
     imageSource: "anime-covers/frieren.jpg", 
@@ -13,14 +16,29 @@ const staticDataBanner = {
     id: 1,
   }
 
-function DashboardPage() {
+async function DashboardPage() {
+  const res = await fetch(`${process.env.STRAPI_BASE_URL}/api/animes?populate=*`, {
+    cache: "no-cache"
+  })
+  const dataObj = await res.json() 
+
+  const animeData: Anime[] = dataObj.data
+  const cleanAnimeData = animeData.map((anime) => {
+    return {
+      id: anime.id,
+      alt: anime.attributes.alt,
+      title: anime.attributes.title,
+      season: anime.attributes.season,
+      imgUrl: anime.attributes.image.data.attributes.url
+    }
+  })
   return (
     <div>
       <FeaturedBanner {...staticDataBanner} />
       <p className="text-3xl font-bold mt-8 border-l-royal-purple border-l-8 pl-2">Anime</p>
       <p className="mt-2">Browse your favorite anime</p>
       <div className='mt-8 flex gap-3'>
-        { Array.from({ length:8 }).map((e) => <AnimeCard />) }
+        { cleanAnimeData.map((anime) => <AnimeCard {...anime} key={anime.id} />) }
       </div>
     </div>
   )
