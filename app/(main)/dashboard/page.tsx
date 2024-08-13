@@ -17,7 +17,7 @@ const staticDataBanner = {
   }
 
 async function DashboardPage() {
-  const res = await fetch(`${process.env.STRAPI_BASE_URL}/api/animes?populate=*`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}/api/animes?populate=*`, {
     cache: "no-cache"
   })
   const dataObj = await res.json() 
