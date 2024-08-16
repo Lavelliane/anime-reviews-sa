@@ -33,7 +33,7 @@ function ReviewForm({ id }: { id: number }) {
       <label htmlFor="body">Body</label>
       <Input {...register('body')} />
 
-      <Button type="submit" className="my-4">Add Review</Button>
+      <Button type="submit" className="my-4 bg-royal-purple text-white">Add Review</Button>
     </form>
   );
 }
