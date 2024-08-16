@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.9.0",
     "@nextui-org/button": "^2.0.37",
     "@nextui-org/react": "^2.4.6",
     "@nextui-org/system": "^2.2.5",
@@ -19,6 +20,7 @@
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.52.2",
     "zod": "^3.23.8",
     "zsa": "^0.5.1",
     "zsa-react": "^0.2.2"

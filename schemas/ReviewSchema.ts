@@ -5,5 +5,8 @@ export const ReviewSchema = z.object({
     body: z.string().trim().min(10, { message: "Body must be at elast 10 characters long" }),
     rating: z.coerce.number(),
     author: z.string(),
-    Anime: z.coerce.number()
 })
+
+export const ReviewSchemaAction = ReviewSchema.extend({
+    anime: z.number(),
+});
