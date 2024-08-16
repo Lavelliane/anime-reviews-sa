@@ -34,7 +34,7 @@ async function AnimeDetailsPage({ params }: { params: { id: number } }) {
       <ReviewForm id={animeDetails.id} />
       {animeDetails.attributes.reviews &&
         reviewDetails &&
-        reviewDetails.map((review) => <Review {...review} />)}
+        reviewDetails.map((review, i) => <Review {...review} key={i} />)}
     </div>
   );
 }
